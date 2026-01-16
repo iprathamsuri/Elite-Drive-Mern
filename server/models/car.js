@@ -9,7 +9,12 @@ const carSchema = new mongoose.Schema({
   gear: String,
   location: String,
   price: Number,
-  image: String
+  image: String,
+
+  ownerEmail: {
+    type: String,
+    required: true
+  }
 });
 
 export default mongoose.model("Car", carSchema);

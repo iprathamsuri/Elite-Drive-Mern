@@ -7,6 +7,8 @@ import authRoutes from "./routes/auth.routes.js";
 import carRoutes from "./routes/car.routes.js";
 import bookingRoutes from "./routes/booking.routes.js";
 
+import reviewRoutes from "./routes/review.routes.js";
+
 dotenv.config();
 
 const app = express();
@@ -20,6 +22,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use("/api/auth", authRoutes);
 app.use("/api/cars", carRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");
